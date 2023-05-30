@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+
+    <string name="intro_first_line">
+        Welcome to my App!
+    </string>
+    <string name="intro_sec_line">
+        Made by Arnob Dey 203-15-3906
+    </string>
+    <string name="btn_signin">
+        Login here!
+    </string>
+    <string name="btn_signup">
+        Register here!
+    </string>
+    <string name="enteremail">
+        Enter Email
+    </string>
+    <string name="enterpass">
+        Enter Password
+    </string>
+</resources>
