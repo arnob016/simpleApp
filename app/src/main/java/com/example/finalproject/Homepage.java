@@ -1,12 +1,15 @@
 package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,7 +18,12 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Homepage extends AppCompatActivity {
     ViewFlipper bannerimg;
     Button logout;
+    RadioGroup rg;
     FirebaseAuth mAuth;
+
+    void loadFragment(Fragment fn){
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragger, fn).commit();
+    }
 
 
     @Override
@@ -23,7 +31,7 @@ public class Homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         bannerimg = findViewById(R.id.bannerimg);
-
+        rg = findViewById(R.id.rdgrp);
         mAuth = FirebaseAuth.getInstance();
         logout = findViewById(R.id.signout);
 
@@ -33,6 +41,21 @@ public class Homepage extends AppCompatActivity {
                 mAuth.signOut();
                 Intent intent = new Intent(Homepage.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i==1){
+                    loadFragment(new fragger1());
+                }
+                else if(i==3){
+                    loadFragment(new fragger3());
+                }
+                else if(i==2){
+                    loadFragment(new fragger2());
+                }
             }
         });
 

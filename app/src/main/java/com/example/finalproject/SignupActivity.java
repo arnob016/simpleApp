@@ -123,8 +123,14 @@ public class SignupActivity extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
+                if (mAuth.getCurrentUser() != null) {
+                    Toast.makeText(SignupActivity.this, "You're Already logged in - redirecting to homepage.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, Homepage.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
