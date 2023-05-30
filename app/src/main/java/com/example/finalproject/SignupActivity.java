@@ -48,7 +48,9 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mAuth.getCurrentUser()!= null){
-
+                    Toast.makeText(SignupActivity.this, "You're Already logged in - redirecting to homepage.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, Homepage.class);
+                    startActivity(intent);
                 }else {
 
 
@@ -96,7 +98,7 @@ public class SignupActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             Toast.makeText(SignupActivity.this, "New user created! (welcome to my app)", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                            Intent intent = new Intent(SignupActivity.this, Homepage.class);
                                             startActivity(intent);
 
                                         } else {
