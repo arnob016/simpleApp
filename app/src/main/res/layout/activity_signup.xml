@@ -79,22 +79,74 @@
                     android:layout_marginRight="20sp"
                     />
             </com.google.android.material.textfield.TextInputLayout>
-
-
         </LinearLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/userEmailAddressWrapper"
+            android:layout_marginHorizontal="20sp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/userEmailAddress"
+                android:inputType="textEmailAddress"
+                android:textSize="15dp"
+                android:hint="Email address"
+                android:textColorHint="@color/colorDarkRed"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/PasswordWrapper"
+                android:layout_weight="1"
+                android:layout_marginRight="10sp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userPassword"
+                    android:inputType="text"
+                    android:textColor="@color/colorRed"
+                    android:textSize="15sp"
+                    android:hint="Password"
+                    android:layout_marginLeft="20sp"
+                    android:textColorHint="@color/colorRed"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/confPasswordWrapper"
+                android:layout_weight="1"
+                android:layout_marginLeft="10sp">
 
-
-
-
-
-
-
-
-
-
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confpassword"
+                    android:inputType="text"
+                    android:textColor="@color/colorRed"
+                    android:textSize="15sp"
+                    android:hint="Confirm password"
+                    android:textColorHint="@color/colorRed"
+                    android:layout_marginRight="20sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/userLogin"
@@ -103,7 +155,7 @@
             android:layout_marginTop="10sp"
             android:background="@drawable/btnsingnin"
             android:layout_marginHorizontal="20sp"
-            android:text="Signin"
+            android:text="Signup"
             android:textSize="30sp"
             />
 
