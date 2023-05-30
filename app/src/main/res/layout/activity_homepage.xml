@@ -4,6 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/screenbg"
     tools:context=".Homepage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Welcome,"
+            android:textSize="20sp"
+            android:gravity="fill"
+            android:layout_weight="0.5"
+            />
+        <EditText
+            android:id="@+id/userfname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_weight="0.5"
+            />
+
+
+        <Button
+            android:id="@+id/signout"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="60sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="signout"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+
+    <ViewFlipper
+        android:id="@+id/bannerimg"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+    </ViewFlipper>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Choose your gender :"
+    android:layout_gravity="center"
+    android:textSize="30sp"
+    android:textColor="@color/colorAccent"/>
+    <RadioGroup
+        android:id="@+id/rdgrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="None"/>
+
+
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/fragger"
+        android:layout_width="match_parent"
+        android:layout_height="450sp"
+        android:layout_margin="30sp"
+        android:background="@drawable/ic_launcher_background"
+        />
+
 
 </LinearLayout>
