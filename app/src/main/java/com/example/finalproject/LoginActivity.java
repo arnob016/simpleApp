@@ -16,10 +16,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 public class LoginActivity extends AppCompatActivity {
 
     TextInputLayout emailwrapper, pwwrapper;
+    String passemail;
     EditText uemail, upw;
     Button signup, login;
     FirebaseAuth mAuth;
@@ -29,16 +32,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         signup = findViewById(R.id.userSignup);
         login = findViewById(R.id.userLogin);
         uemail = findViewById(R.id.userEmail);
         upw = findViewById(R.id.userPassword);
-
         emailwrapper = findViewById(R.id.UserEmailWrapper);
         pwwrapper = findViewById(R.id.UserPasswordWrapper);
 
         mAuth = FirebaseAuth.getInstance();
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +70,9 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this, Homepage.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
+                                FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                                Toast.makeText(LoginActivity.this, "Welcome "+currentFirebaseUser.getEmail(), Toast.LENGTH_SHORT).show();
+                                passemail = currentFirebaseUser.getEmail();
 
                             } else {
                                 Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();

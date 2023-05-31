@@ -8,18 +8,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Homepage extends AppCompatActivity {
+    MainActivity main;
+    User user;
     ViewFlipper bannerimg;
+    String ufname1;
     Button logout;
     RadioGroup rg;
     FirebaseAuth mAuth;
+    TextView unameshow;
+    private DatabaseReference mDatabase;
 
     void loadFragment(Fragment fn){
         getSupportFragmentManager().beginTransaction().replace(R.id.fragger, fn).commit();
@@ -30,10 +37,14 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        String nameuser = FirebaseAuth.getInstance().getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         bannerimg = findViewById(R.id.bannerimg);
         rg = findViewById(R.id.rdgrp);
         mAuth = FirebaseAuth.getInstance();
         logout = findViewById(R.id.signout);
+        unameshow = findViewById(R.id.userfname);
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +54,7 @@ public class Homepage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

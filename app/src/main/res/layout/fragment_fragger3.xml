@@ -6,10 +6,19 @@
     tools:context=".fragger3"
     android:background="@drawable/bggrade3">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No items have been added yet!"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="70sp"/>
+
+
+    </LinearLayout>
+
 
 </FrameLayout>

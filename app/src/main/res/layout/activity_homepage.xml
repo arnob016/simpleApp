@@ -20,7 +20,7 @@
             android:gravity="fill"
             android:layout_weight="0.5"
             />
-        <EditText
+        <TextView
             android:id="@+id/userfname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,6 +33,7 @@
             android:id="@+id/signout"
             android:layout_width="wrap_content"
             android:layout_height="40sp"
+            android:background="@drawable/btnsingnin"
             android:layout_gravity="left|center"
             android:layout_marginLeft="60sp"
             android:layout_weight="1"
@@ -47,13 +48,13 @@
         android:layout_width="match_parent"
         android:layout_height="220dp">
     </ViewFlipper>
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Choose your gender :"
-    android:layout_gravity="center"
-    android:textSize="30sp"
-    android:textColor="@color/colorAccent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose your gender :"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:textColor="@color/colorAccent"/>
     <RadioGroup
         android:id="@+id/rdgrp"
         android:layout_width="wrap_content"
@@ -77,13 +78,21 @@
 
 
     </RadioGroup>
+
     <FrameLayout
         android:id="@+id/fragger"
         android:layout_width="match_parent"
-        android:layout_height="450sp"
+        android:layout_height="400sp"
         android:layout_margin="30sp"
         android:background="@drawable/ic_launcher_background"
         />
 
+    <Button
+        android:id="@+id/cart"
+        android:text="Cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btnsignup"
+        android:layout_gravity="center"/>
 
 </LinearLayout>
